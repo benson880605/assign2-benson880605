@@ -63,6 +63,8 @@ void setup() {
 }
 
 void draw() {
+  
+  println(groundHogSpeed);
 
   switch(gameState){
     
