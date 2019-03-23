@@ -11,11 +11,7 @@ int lifeCount = 2;
 
 int groundHogX , groundHogY ;
 int groundHogR , groundHogB ;
-
-double a = 80;
-double b = 15;
-double c = a/b;
-double groundHogSpeed = c;
+int groundHogSpeed = 16/3;
 
 int soldierX = -80;
 int soldierY = 160+80*floor(random(4));
