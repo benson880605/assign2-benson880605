@@ -149,7 +149,7 @@ void draw() {
       left = false;
       right = false;
       groundHogY += groundHogSpeed;
-      if(groundHogY == 160 || groundHogY >= 240 && groundHogY <= 241 || groundHogY >= 320 && groundHogY <= 321||groundHogY >= 400 && groundHogY <= 401){
+      if(groundHogY == 160 || groundHogY >= 240 && groundHogY <= 241 || groundHogY >= 320 && groundHogY <= 322 || groundHogY >= 400 && groundHogY <= 403 ){
         down = false;
         idle = true;
       }
