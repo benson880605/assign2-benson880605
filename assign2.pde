@@ -9,9 +9,9 @@ int gameState;
 
 int lifeCount = 2;
 
-int groundHogX , groundHogY ;
-int groundHogR , groundHogB ;
-float groundHogSpeed = 16/3;
+float groundHogX , groundHogY ;
+float groundHogR , groundHogB ;
+float groundHogSpeed = 80/15;
 
 int soldierX = -80;
 int soldierY = 160+80*floor(random(4));
