@@ -33,6 +33,7 @@ boolean right = false;
 boolean idle = false;
 
 
+
 void setup() {
   
   size(640, 480 , P2D);
@@ -63,6 +64,36 @@ void setup() {
   idle = true;
   
 }
+
+void keyPressed(){
+  if(key == CODED){
+    switch( keyCode ){
+      
+      case DOWN:
+      down = true;
+      if(left){down = false;}  // Prevent bug
+      if(right){down = false;}  // Prevent bug
+      if(groundHogY >= 400){down = false;}
+      break;
+      
+      case LEFT:
+      left = true;
+      if(down){left = false;}  // Prevent bug
+      if(right){left = false;}  // Prevent bug
+      if(groundHogX <= 0){left = false;}  // Prevent bug
+      break;
+      
+      case RIGHT:
+      right = true;
+      if(down){right = false;}  // Prevent bug
+      if(left){right = false;}  // Prevent bug
+      if(groundHogX >= 560){right = false;}
+      break;
+        
+    }
+  }
+}
+
 
 void draw() {
 
@@ -209,31 +240,3 @@ void draw() {
   }
 }
 
-void keyPressed(){
-  if(key == CODED){
-    switch( keyCode ){
-      
-      case DOWN:
-      down = true;
-      if(left){down = false;}  // Prevent bug
-      if(right){down = false;}  // Prevent bug
-      if(groundHogY >= 400){down = false;}
-      break;
-      
-      case LEFT:
-      left = true;
-      if(down){left = false;}  // Prevent bug
-      if(right){left = false;}  // Prevent bug
-      if(groundHogX <= 0){left = false;}  // Prevent bug
-      break;
-      
-      case RIGHT:
-      right = true;
-      if(down){right = false;}  // Prevent bug
-      if(left){right = false;}  // Prevent bug
-      if(groundHogX >= 560){right = false;}
-      break;
-        
-    }
-  }
-}
