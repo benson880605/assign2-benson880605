@@ -35,9 +35,7 @@ boolean idle = false;
 
 void setup() {
   
-  frameRate(60);
-  
-  size(640, 480 );
+	size(640, 480 );
 
   bg = loadImage("img/bg.jpg");
   gameOver = loadImage("img/gameover.jpg");
@@ -151,7 +149,7 @@ void draw() {
       left = false;
       right = false;
       groundHogY += groundHogSpeed;
-      if(groundHogY == 160 || groundHogY == 240 || groundHogY == 320 || groundHogY >= 400){
+      if(groundHogY == 160||groundHogY == 240||groundHogY == 320||groundHogY == 400){
         down = false;
         idle = true;
       }
@@ -162,7 +160,7 @@ void draw() {
       right = false;
       down = false;
       groundHogX -= groundHogSpeed;
-      if(groundHogX <= 0||groundHogX == 80||groundHogX == 160||groundHogX == 240||groundHogX == 320||groundHogX = 400||groundHogX == 480||groundHogX >= 560){
+      if(groundHogX == 0||groundHogX == 80||groundHogX == 160||groundHogX == 240||groundHogX == 320||groundHogX == 400||groundHogX == 480||groundHogX == 560){
         left = false;
         idle = true;
       }
@@ -173,7 +171,7 @@ void draw() {
       left = false;
       down = false;
       groundHogX += groundHogSpeed;
-      if(groundHogX <= 0||groundHogX == 80||groundHogX == 160||groundHogX == 240||groundHogX == 320||groundHogX == 400||groundHogX == 480||groundHogX >= 560){
+      if(groundHogX == 0||groundHogX == 80||groundHogX == 160||groundHogX == 240||groundHogX == 320||groundHogX == 400||groundHogX == 480||groundHogX == 560){
         right = false;
         idle = true;
       }
@@ -218,7 +216,6 @@ void keyPressed(){
       if(left){down = false;}  // Prevent bug
       if(right){down = false;}  // Prevent bug
       if(groundHogY >= 400){down = false;}
-
       break;
       
       case LEFT:
