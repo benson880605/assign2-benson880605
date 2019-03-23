@@ -11,7 +11,7 @@ int lifeCount = 2;
 
 int groundHogX , groundHogY ;
 int groundHogR , groundHogB ;
-int groundHogSpeed = 80/15;
+int groundHogSpeed = 80/16;
 
 int soldierX = -80;
 int soldierY = 160+80*floor(random(4));
@@ -35,7 +35,7 @@ boolean idle = false;
 
 void setup() {
   
-  size(640, 480 );
+	size(640, 480 );
 
   bg = loadImage("img/bg.jpg");
   gameOver = loadImage("img/gameover.jpg");
@@ -59,8 +59,6 @@ void setup() {
   groundHogY = 80;
   
   idle = true;
-  
-
   
 }
 
@@ -141,6 +139,10 @@ void draw() {
       groundHogX = width/2;
       groundHogY = 80;
       lifeCount -= 1;
+      down = false;
+      left = false;
+      right = false;
+      idle = true;
     }
     
   // ControlGroundHog
