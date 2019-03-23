@@ -181,11 +181,12 @@ void draw() {
       idle = false;
       left = false;
       right = false;
-      groundHogY += groundHogSpeed;
       if(groundHogY == 160 || groundHogY == 240 || groundHogY == 320 || groundHogY == 400 ){
         down = false;
         idle = true;
       }
+      groundHogY += groundHogSpeed;
+      
     }
     if(left){
       image(groundHogLeft,groundHogX,groundHogY);
