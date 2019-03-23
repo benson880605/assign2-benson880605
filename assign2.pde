@@ -14,7 +14,8 @@ int groundHogR , groundHogB ;
 
 double a = 80;
 double b = 15;
-float groundHogSpeed = a/b;
+double c = a/b;
+float groundHogSpeed = c;
 
 int soldierX = -80;
 int soldierY = 160+80*floor(random(4));
