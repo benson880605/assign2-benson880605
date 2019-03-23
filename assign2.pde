@@ -11,7 +11,7 @@ int lifeCount = 2;
 
 int groundHogX , groundHogY ;
 int groundHogR , groundHogB ;
-int groundHogSpeed = 5;
+int groundHogSpeed = 80/15;
 
 int soldierX = -80;
 int soldierY = 160+80*floor(random(4));
@@ -35,7 +35,7 @@ boolean idle = false;
 
 void setup() {
   
-	size(640, 480 );
+  size(640, 480 );
 
   bg = loadImage("img/bg.jpg");
   gameOver = loadImage("img/gameover.jpg");
@@ -63,7 +63,7 @@ void setup() {
 }
 
 void draw() {
-  
+  println(groundHogSpeed);
   switch(gameState){
     
 // GameStart
