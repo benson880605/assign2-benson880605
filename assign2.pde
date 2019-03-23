@@ -155,6 +155,7 @@ void draw() {
         down = false;
         idle = true;
       }
+      if(groundHogY >= 400){down = false;}
     }
     if(left){
       image(groundHogLeft,groundHogX,groundHogY);
@@ -217,7 +218,6 @@ void keyPressed(){
       down = true;
       if(left){down = false;}  // Prevent bug
       if(right){down = false;}  // Prevent bug
-      if(groundHogY >= 400){down = false;}
       break;
       
       case LEFT:
