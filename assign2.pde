@@ -9,23 +9,23 @@ int gameState;
 
 int lifeCount = 2;
 
-int groundHogX , groundHogY ;
-int groundHogR , groundHogB ;
-int groundHogSpeed = 80/15;
+float groundHogX , groundHogY ;
+float groundHogR , groundHogB ;
+float groundHogSpeed = 80/15;
 
-int soldierX = -80;
-int soldierY = 160+80*floor(random(4));
-int soldierSpeed = 5;
-int soldierR , soldierB; //Right and Buttom
+float soldierX = -80;
+float soldierY = 160+80*floor(random(4));
+float soldierSpeed = 5;
+float soldierR , soldierB; //Right and Buttom
 
-int cabbageX = 80*floor(random(8));
-int cabbageY = 160+80*floor(random(4));
-int cabbageR , cabbageB; //Right and Buttom
+float cabbageX = 80*floor(random(8));
+float cabbageY = 160+80*floor(random(4));
+float cabbageR , cabbageB; //Right and Buttom
 
-int buttonX = 248;
-int buttonY = 360;
-int buttonW = 144;
-int buttonH = 60;
+float buttonX = 248;
+float buttonY = 360;
+float buttonW = 144;
+float buttonH = 60;
 
 boolean down = false;
 boolean left = false;
@@ -36,6 +36,8 @@ boolean idle = false;
 void setup() {
   
   size(640, 480 , P2D);
+  
+  frameRate(60);
 
   bg = loadImage("img/bg.jpg");
   gameOver = loadImage("img/gameover.jpg");
@@ -149,7 +151,7 @@ void draw() {
       left = false;
       right = false;
       groundHogY += groundHogSpeed;
-      if(groundHogY == 160 || groundHogY >= 240 && groundHogY <= 241 || groundHogY >= 320 && groundHogY <= 330 || groundHogY >= 400 && groundHogY <= 403 ){
+      if(groundHogY == 160 || groundHogY == 240 || groundHogY == 320 || groundHogY == 400 ){
         down = false;
         idle = true;
       }
