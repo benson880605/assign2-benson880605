@@ -11,7 +11,7 @@ int lifeCount = 2;
 
 int groundHogX , groundHogY ;
 int groundHogR , groundHogB ;
-long groundHogSpeed = 5.33333333L;
+double groundHogSpeed = 80/15;
 
 int soldierX = -80;
 int soldierY = 160+80*floor(random(4));
@@ -60,10 +60,13 @@ void setup() {
   
   idle = true;
   
+  println(groundHogSpeed);
+
+  
 }
 
 void draw() {
-  println(groundHogSpeed);
+
   switch(gameState){
     
 // GameStart
