@@ -9,23 +9,23 @@ int gameState;
 
 int lifeCount = 2;
 
-float groundHogX , groundHogY ;
-float groundHogR , groundHogB ;
-float groundHogSpeed = 80/15;
+int groundHogX , groundHogY ;
+int groundHogR , groundHogB ;
+int groundHogSpeed = 80/15;
 
-float soldierX = -80;
-float soldierY = 160+80*floor(random(4));
-float soldierSpeed = 5;
-float soldierR , soldierB; //Right and Buttom
+int soldierX = -80;
+int soldierY = 160+80*floor(random(4));
+int soldierSpeed = 5;
+int soldierR , soldierB; //Right and Buttom
 
-float cabbageX = 80*floor(random(8));
-float cabbageY = 160+80*floor(random(4));
-float cabbageR , cabbageB; //Right and Buttom
+int cabbageX = 80*floor(random(8));
+int cabbageY = 160+80*floor(random(4));
+int cabbageR , cabbageB; //Right and Buttom
 
-float buttonX = 248;
-float buttonY = 360;
-float buttonW = 144;
-float buttonH = 60;
+int buttonX = 248;
+int buttonY = 360;
+int buttonW = 144;
+int buttonH = 60;
 
 boolean down = false;
 boolean left = false;
@@ -33,12 +33,9 @@ boolean right = false;
 boolean idle = false;
 
 
-
 void setup() {
   
-  size(640, 480 , P2D);
-  
-  frameRate(60);
+	size(640, 480 );
 
   bg = loadImage("img/bg.jpg");
   gameOver = loadImage("img/gameover.jpg");
@@ -64,36 +61,6 @@ void setup() {
   idle = true;
   
 }
-
-void keyPressed(){
-  if(key == CODED){
-    switch( keyCode ){
-      
-      case DOWN:
-      down = true;
-      if(left){down = false;}  // Prevent bug
-      if(right){down = false;}  // Prevent bug
-      if(groundHogY >= 400){down = false;}
-      break;
-      
-      case LEFT:
-      left = true;
-      if(down){left = false;}  // Prevent bug
-      if(right){left = false;}  // Prevent bug
-      if(groundHogX <= 0){left = false;}  // Prevent bug
-      break;
-      
-      case RIGHT:
-      right = true;
-      if(down){right = false;}  // Prevent bug
-      if(left){right = false;}  // Prevent bug
-      if(groundHogX >= 560){right = false;}
-      break;
-        
-    }
-  }
-}
-
 
 void draw() {
 
@@ -181,12 +148,11 @@ void draw() {
       idle = false;
       left = false;
       right = false;
-      if(groundHogY == 160 || groundHogY == 240 || groundHogY == 320 || groundHogY == 400 ){
+      groundHogY += groundHogSpeed;
+      if(groundHogY == 160||groundHogY == 240||groundHogY == 320||groundHogY == 400){
         down = false;
         idle = true;
       }
-      groundHogY += groundHogSpeed;
-      
     }
     if(left){
       image(groundHogLeft,groundHogX,groundHogY);
@@ -241,3 +207,31 @@ void draw() {
   }
 }
 
+void keyPressed(){
+  if(key == CODED){
+    switch( keyCode ){
+      
+      case DOWN:
+      down = true;
+      if(left){down = false;}  // Prevent bug
+      if(right){down = false;}  // Prevent bug
+      if(groundHogY >= 400){down = false;}
+      break;
+      
+      case LEFT:
+      left = true;
+      if(down){left = false;}  // Prevent bug
+      if(right){left = false;}  // Prevent bug
+      if(groundHogX <= 0){left = false;}  // Prevent bug
+      break;
+      
+      case RIGHT:
+      right = true;
+      if(down){right = false;}  // Prevent bug
+      if(left){right = false;}  // Prevent bug
+      if(groundHogX >= 560){right = false;}
+      break;
+        
+    }
+  }
+}
