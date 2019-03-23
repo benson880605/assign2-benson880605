@@ -9,9 +9,9 @@ int gameState;
 
 int lifeCount = 2;
 
-float groundHogX , groundHogY ;
-float groundHogR , groundHogB ;
-float groundHogSpeed = 80/15;
+int groundHogX , groundHogY ;
+int groundHogR , groundHogB ;
+int groundHogSpeed = 80/15;
 
 int soldierX = -80;
 int soldierY = 160+80*floor(random(4));
@@ -149,7 +149,7 @@ void draw() {
       left = false;
       right = false;
       groundHogY += groundHogSpeed;
-      if(groundHogY == 160||groundHogY == 240||groundHogY == 320||groundHogY == 400){
+      if(groundHogY == 160 || groundHogY >= 240 && groundHogY <= 241 ||groundHogY == 320||groundHogY == 400){
         down = false;
         idle = true;
       }
