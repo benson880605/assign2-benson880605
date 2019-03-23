@@ -35,7 +35,9 @@ boolean idle = false;
 
 void setup() {
   
-	size(640, 480 );
+  frameRate(60);
+  
+  size(640, 480 );
 
   bg = loadImage("img/bg.jpg");
   gameOver = loadImage("img/gameover.jpg");
