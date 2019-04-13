@@ -102,7 +102,6 @@ void draw() {
       image(life,10,10);
       image(life,80,10);
       image(life,150,10);
-      cabbageX = -160;
     }
     image(soil,0,160);
     noStroke();
@@ -131,6 +130,7 @@ void draw() {
     cabbageB = cabbageY + 80;
     if( groundHogX < cabbageR && groundHogR > cabbageX && groundHogY < cabbageB && groundHogB > cabbageY){
       lifeCount += 1;
+      cabbageX = -160;
     }
     
   // HurtBySoldier
